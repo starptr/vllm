@@ -8,7 +8,7 @@ namespace vllm {
 template<typename T>
 __device__ __forceinline__ T silu(const T& x) {
   // x * sigmoid(x)
-  return (T) (((float) x) / (1.0f + expf((float) -x)));
+  return x; // uninterp
 }
 
 template<typename scalar_t>
